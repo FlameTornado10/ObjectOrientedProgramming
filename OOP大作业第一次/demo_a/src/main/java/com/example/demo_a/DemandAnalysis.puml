@@ -1,0 +1,48 @@
+
+
+
+@startuml
+'https://plantuml.com/class-diagram
+
+'+class NoteBookOperation {
+'    - TextArea textArea;
+'    - WebView webView;
+'    - AnchorPane layoutPane;
+''    - TableView<NoteBook> noteBookTable;
+''    - TableColumn<NoteBook, String> noteBookColumn;
+'    - File result;
+''    - NoteBook currentNoteBook;
+''    - ObservableList<NoteBook> noteBookData；
+'
+'    - void setContent()
+'    - void initialize()   (TextArea listener involved)
+'    - void onMenuOpen()
+''    - void onMenuSave()
+'    - void onMenuClose()
+''    - void onMenuDelete()
+'    - void onMenuAbout()
+''    - void onContextSelectAll()
+'}
+'+class FileTools {
+'    + static String readFile(File file)
+'    + static void writeFile(File file, String str)
+''    + static String mdToHtml(String md)
+'}
+'
+'
+'+class TextArea {
+'    ...;
+'    setText();
+'    getText();
+'    ...();
+'}
+
++class UploadController {
+    -...;
+    +getAccessToken(File file);
+    +UploadFile();
+    +...();
+}
+'NoteBookOperation <|-- FileTools
+'FileTools <|-- TextArea
+@enduml

@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+CarInFactory <|- Car_Driver
+class CarInFactory {
+    -private String model;
+    -private int productionDate;
+    -private int engineID;
+    -private int warrantyPeriod;
+
+    +public String getModel()
+    +public int getProductionDate()
+    +public int getEngineID()
+    +public int getWarrantyPeriod()
+    +public void setProductionDate(int date)
+    +public void setEngineID(int date)
+    +public void setWarrantyPeriod(int date)
+}
+
+class Car_Driver{
+    private String model;
+    private int productionDate;
+    private int engineID;
+    private int warrantyPeriod;
+
+    public String getModel()
+    public int getProductionDate()
+    public int getEngineID()
+    public int getWarrantyPeriod()
+    public void setProductionDate(int date)
+    private int DegreeOfLove;
+    public int getDegreeOfLove()
+}
+'Traffic Administration Bureau
+Car_Driver <|- Car_TAB
+class Car_TAB{
+    private int ID;
+    private int scoresRemaining;
+    private String model;
+    private int productionDate;
+    private int engineID;
+
+    public String getModel()
+    public int getProductionDate()
+    public int getScoresRemaining()
+    public void setID(int ID)
+    public void setScoresRemaining(int score)
+}
+@enduml

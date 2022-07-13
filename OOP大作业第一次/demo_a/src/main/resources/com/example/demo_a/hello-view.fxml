@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<SplitPane dividerPositions="0.5" maxHeight="-Infinity" maxWidth="-Infinity"
+           minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0"
+           prefWidth="1200.0" xmlns="http://javafx.com/javafx/8"
+           xmlns:fx="http://javafx.com/fxml/1"
+           fx:controller="com.example.demo_a.NoteBookOperation">
+  <items>
+    <AnchorPane fx:id="layoutPane" minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <MenuBar prefHeight="34.0" prefWidth="595.0" style="-fx-background-color: #4492a2;" AnchorPane.bottomAnchor="764.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <menus>
+                <Menu mnemonicParsing="false" style="-fx-background-color: #b7cedc;" styleClass="menu" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onMenuOpen" text="Open" />
+                        <MenuItem mnemonicParsing="false" onAction="#onMenuSave" text="Save" />
+                        <MenuItem mnemonicParsing="false" onAction="#onMenuClose" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" style="-fx-background-color: #b7cedc;" styleClass="menu" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onMenuAbout" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" style="-fx-background-color: #b7cedc;" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" onAction="#onMenuAbout" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <SplitPane dividerPositions="0.2984822934232715" prefHeight="798.0" prefWidth="595.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="34.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <TableView fx:id="noteBookTable" layoutX="-27.0" layoutY="84.0" prefHeight="762.0" prefWidth="173.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="noteBookColumn" prefWidth="75.0" text="Note books" />
+                          </columns>
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                     <children>
+                        <TextArea fx:id="textArea" opacity="0.58" prefHeight="796.0" prefWidth="412.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="508.0" prefWidth="521.0">
+         <children>
+            <WebView fx:id="webView" layoutX="6.0" prefHeight="798.0" prefWidth="599.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children></AnchorPane>
+  </items>
+</SplitPane>
